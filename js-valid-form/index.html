@@ -6,29 +6,45 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Document</title>
+    <title>js-valid-form</title>
+    <link
+      rel="stylesheet"
+      href="./styles.css"
+    />
   </head>
   <body>
-    <form id="orderForm">
+    <h1>Test forms for test my validate</h1>
+    <form
+      id="orderForm"
+      class="form"
+    >
       <input
+        class="form__input"
         type="text"
         id="first_name"
         name="name"
+        placeholder="Name"
       />
       <input
+        class="form__input"
         type="text"
         id="last_name"
         name="last"
+        placeholder="Last"
       />
       <input
+        class="form__input"
         type="text"
         id="email"
         name="email"
+        placeholder="Email"
       />
       <input
+        class="form__input"
         type="text"
         id="phone"
         name="phone"
+        placeholder="Phone"
       />
       <div
         id="error"
@@ -37,12 +53,12 @@
       ></div>
       <button
         type="submit"
-        class=""
+        class="form__button"
         name="send_order"
         id="send_order_button"
         style="width: 100%"
       >
-        <span style="color: white">Submit Form</span>
+        <span class="form__button-span">Submit Form</span>
         <img
           src="./images/loader.gif"
           style="width: 30px; display: none; margin: 0px auto"
@@ -50,9 +66,63 @@
         />
       </button>
     </form>
-    <script src="validPhone.js"></script>
+
+    <form
+      id="orderForm2"
+      class="form"
+    >
+      <input
+        class="form__input"
+        type="text"
+        id="first_name2"
+        name="name"
+        placeholder="Name"
+      />
+      <input
+        class="form__input"
+        type="text"
+        id="last_name2"
+        name="last"
+        placeholder="Last"
+      />
+      <input
+        class="form__input"
+        type="text"
+        id="email2"
+        name="email"
+        placeholder="Email"
+      />
+      <input
+        class="form__input"
+        type="text"
+        id="phone2"
+        name="phone"
+        placeholder="Phone"
+      />
+      <div
+        id="error2"
+        class="error"
+        style="color: red; text-align: center; margin-bottom: 10px"
+      ></div>
+      <button
+        type="submit"
+        class="form__button"
+        name="send_order"
+        id="send_order_button"
+        style="width: 100%"
+      >
+        <span class="form__button-span">Submit Form</span>
+        <img
+          src="./images/loader.gif"
+          style="width: 30px; display: none; margin: 0px auto"
+          class="loadergf"
+        />
+      </button>
+    </form>
+  
+    <script src="ValidateForm.js"></script>
     <script>
-      const firstForm = new ValidPhone({
+      const firstForm = new ValidateForm({
         country: "pl",
         formId: "orderForm",
         firstNameId: "first_name",
@@ -60,6 +130,18 @@
         emailId: "email",
         errorId: "error",
         phoneId: "phone",
+        openDrop: false,
+      });
+    </script>
+    <script>
+      const firstForm2 = new ValidateForm({
+        country: "hr",
+        formId: "orderForm2",
+        firstNameId: "first_name2",
+        lastNameId: "last_name2",
+        emailId: "email2",
+        errorId: "error2",
+        phoneId: "phone2",
       });
     </script>
   </body>

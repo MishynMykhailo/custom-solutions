@@ -97,8 +97,6 @@ class CountryDropdown {
 
   // Метод для создания списка стран
   createCountryList() {
-    console.time("myCode");
-
     const fragment = document.createDocumentFragment();
     const countryList = document.createElement("ul");
     countryList.classList.add("custom__country-list");
@@ -145,7 +143,6 @@ class CountryDropdown {
     }
 
     countryList.appendChild(fragment);
-    console.timeEnd("myCode");
 
     return countryList;
   }
@@ -221,6 +218,7 @@ class ValidateForm {
     emailId,
     errorId,
     phoneId,
+    openDrop = true,
   }) {
     this.country = country;
     this.formId = formId;
@@ -229,6 +227,7 @@ class ValidateForm {
     this.emailId = emailId;
     this.phoneId = phoneId;
     this.errorId = errorId;
+    this.openDrop = openDrop;
     // Сообщение ошибки
     this.errorMessage = "";
     this.hasError = false;
@@ -400,6 +399,10 @@ class ValidateForm {
       }
     };
 
+    if (!this.openDrop) {
+      arrowSelect.style.display = "none";
+      return;
+    }
     countrySelect.addEventListener("click", toggleCountryList);
     arrowSelect.addEventListener("click", toggleCountryList);
     countryList.addEventListener("click", handleListItemClick);

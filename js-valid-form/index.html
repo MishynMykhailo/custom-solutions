@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="orderForm">
+      <input
+        type="text"
+        id="first_name"
+        name="name"
+      />
+      <input
+        type="text"
+        id="last_name"
+        name="last"
+      />
+      <input
+        type="text"
+        id="email"
+        name="email"
+      />
+      <input
+        type="text"
+        id="phone"
+        name="phone"
+      />
+      <div
+        id="error"
+        class="error"
+        style="color: red; text-align: center; margin-bottom: 10px"
+      ></div>
+      <button
+        type="submit"
+        class=""
+        name="send_order"
+        id="send_order_button"
+        style="width: 100%"
+      >
+        <span style="color: white">Submit Form</span>
+        <img
+          src="./images/loader.gif"
+          style="width: 30px; display: none; margin: 0px auto"
+          class="loadergf"
+        />
+      </button>
+    </form>
+    <script src="validPhone.js"></script>
+    <script>
+      const firstForm = new ValidPhone({
+        country: "pl",
+        formId: "orderForm",
+        firstNameId: "first_name",
+        lastNameId: "last_name",
+        emailId: "email",
+        errorId: "error",
+        phoneId: "phone",
+      });
+    </script>
+  </body>
+</html>

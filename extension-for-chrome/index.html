@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>extension-for-chrome</title>
+  </head>
+  <body>
+    <form id="dataForm">
+      <input id="data" />
+      <button type="submit">submit</button>
+    </form>
+    <script>
+      const dataForm = document.getElementById("dataForm");
+      const data = document.getElementById("data");
+      dataForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const valueArray = data.value.split(" ");
+        let object = {};
+        let key = null;
+        for (let i = 0; i < valueArray.length; i++) {
+          if (valueArray[i].includes(":")) {
+            key = valueArray[i].replace(":", "");
+            object[key] = "";
+          } else if (key !== null) {
+            object[key] += " " + valueArray[i];
+          }
+        }
+        let filteredObject = {};
+        for (elem in object) {
+          switch (elem.toLowerCase()) {
+            case "first_name":
+            case "last_name":
+            case "email":
+            case "phone":
+              filteredObject[elem] = object[elem].trim();
+              break;
+          }
+        }
+        console.log(filteredObject);
+        return filteredObject;
+        а;
+      });
+    </script>
+  </body>
+</html>

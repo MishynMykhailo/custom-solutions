@@ -86,6 +86,30 @@ const phoneRules = {
     errorForMinLength: "Telefonska številka ne sme biti krajša od 12 znakov",
     errorForMaxLength: "Telefonska številka ne sme biti daljša od 12 znakov",
   },
+  brpt: {
+    iso: "br",
+    title: "Brazil (Brasil) PT",
+    countryCode: "+55",
+    minLength: 13,
+    maxLength: 14,
+    nameError: "Preencha o nome e o sobrenome",
+    emailError: "To e-mail é inválid",
+    errorForStartPhone: "O telefone após +55 não pode começar com 0",
+    errorForMinLength: "O telefone não pode ter menos de 13 caracteres",
+    errorForMaxLength: "O telefone não pode ter mais de 14 caracteres",
+  },
+  brfr: {
+    iso: "br",
+    title: "Brazil (Brasil) FR",
+    countryCode: "+55",
+    minLength: 13,
+    maxLength: 14,
+    nameError: "Preencha o nome e o sobrenome",
+    emailError: "To e-mail é inválid",
+    errorForStartPhone: "O telefone após +55 não pode começar com 0",
+    errorForMinLength: "O telefone não pode ter menos de 13 caracteres",
+    errorForMaxLength: "O telefone não pode ter mais de 14 caracteres",
+  },
 };
 
 class CountryDropdown {
@@ -234,7 +258,7 @@ class ValidateForm {
     // Добавляем разметку для флагов
     this.countryDropdown = new CountryDropdown({
       phoneId,
-      defaultCountry: country,
+      defaultCountry: phoneRules[country].iso,
     });
     // Если указан начальный country, то берем его
     this.flag = this.countryDropdown.defaultCountry

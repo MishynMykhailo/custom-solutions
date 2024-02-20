@@ -137,6 +137,18 @@ const phoneRules = {
     errorForMinLength: "Phone number cannot be shorter than 12 characters",
     errorForMaxLength: "Phone number cannot be longer than 13 characters",
   },
+  ca: {
+    iso: "ca",
+    title: "Canada",
+    countryCode: "+1",
+    minLength: 12,
+    maxLength: 12,
+    nameError: "Fill in first name and last name",
+    emailError: "The email is invalid",
+    errorForStartPhone: "Telephone after +1 cannot start with 0",
+    errorForMinLength: "The phone cannot be shorter than 12 characters",
+    errorForMaxLength: "The phone cannot be more than 12 characters long",
+  },
 };
 
 class CountryDropdown {

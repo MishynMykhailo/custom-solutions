@@ -398,6 +398,16 @@ class ValidateForm {
         target.value = countryCode + target.value.slice(countryCode.length);
       }
     });
+    phoneTag.addEventListener("keyup", (event) => {
+      const { target } = event;
+      const { countryCode } = phoneRules[this.flag];
+      // Проверяем, если значение начинается с countryCode, то ничего не делаем
+      if (!target.value.startsWith(countryCode)) {
+        // Иначе добавляем countryCode и обновляем значение
+        target.value = "";
+        target.value = countryCode + target.value.slice(countryCode.length);
+      }
+    });
   }
   #handleErrorMessage(message) {
     this.errorMessage = message;

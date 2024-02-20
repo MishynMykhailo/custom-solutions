@@ -104,11 +104,38 @@ const phoneRules = {
     countryCode: "+55",
     minLength: 13,
     maxLength: 14,
-    nameError: "Preencha o nome e o sobrenome",
-    emailError: "To e-mail é inválid",
-    errorForStartPhone: "O telefone após +55 não pode começar com 0",
-    errorForMinLength: "O telefone não pode ter menos de 13 caracteres",
-    errorForMaxLength: "O telefone não pode ter mais de 14 caracteres",
+    nameError: "Indiquez vos nom et prénom",
+    emailError: "L'adresse électronique n'est pas valide",
+    errorForStartPhone:
+      "Le numéro de téléphone après +55 ne peut pas commencer par 0",
+    errorForMinLength:
+      "Le numéro de téléphone ne peut pas comporter moins de 13 caractères",
+    errorForMaxLength:
+      "Le numéro de téléphone ne doit pas comporter plus de 14 caractères",
+  },
+  dk: {
+    iso: "dk",
+    title: "Denmark (Danmark)",
+    countryCode: "+45",
+    minLength: 11,
+    maxLength: 11,
+    nameError: "Udfyld dit for- og efternavn",
+    emailError: "Til e-mail er ugyldig",
+    errorForStartPhone: "Telefonnummeret efter +55 kan ikke starte med 0",
+    errorForMinLength: "Telefonnummeret kan ikke være kortere end 11 tegn",
+    errorForMaxLength: "Telefonnummeret kan ikke være længere end 11 tegn",
+  },
+  au: {
+    iso: "au",
+    title: "Denmark (Danmark)",
+    countryCode: "+61",
+    minLength: 12,
+    maxLength: 12,
+    nameError: "Fill in your first and last name",
+    emailError: "To email is invalid",
+    errorForStartPhone: "The phone number after +61 cannot start with 0",
+    errorForMinLength: "Phone number cannot be shorter than 12 characters",
+    errorForMaxLength: "Phone number cannot be longer than 12 characters",
   },
 };
 
@@ -348,16 +375,17 @@ class ValidateForm {
 
     phoneTag.addEventListener("input", (event) => {
       const { countryCode } = phoneRules[this.flag];
-      const { target, inputType } = event;
+      const { target } = event;
+
       if (target.value.match(/[^+0-9]/g)) {
         target.value = target.value.replace(/[^+0-9]/g, "");
       } else {
         target.value = countryCode + target.value.slice(countryCode.length);
       }
+    });
 
-      if (["cut", "copy", "paste"].includes(inputType)) {
-        event.preventDefault();
-      }
+    phoneTag.addEventListener("paste", (event) => {
+      event.preventDefault(); // Отменяем вставку текста из буфера обмена
     });
 
     phoneTag.addEventListener("click", (event) => {

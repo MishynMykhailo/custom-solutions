@@ -414,7 +414,7 @@ class ValidateForm {
     const phoneTag = document.getElementById(this.phoneId);
 
     phoneTag.addEventListener("input", (event) => {
-      const { countryCode } = phoneRules[this.flag];
+      const { countryCode } = phoneRules[this.country];
       const { target } = event;
 
       if (target.value.match(/[^+0-9]/g)) {
@@ -430,7 +430,7 @@ class ValidateForm {
 
     phoneTag.addEventListener("click", (event) => {
       const { target } = event;
-      const { countryCode } = phoneRules[this.flag];
+      const { countryCode } = phoneRules[this.country];
       // Проверяем, если значение начинается с countryCode, то ничего не делаем
       if (!target.value.startsWith(countryCode)) {
         // Иначе добавляем countryCode и обновляем значение
@@ -438,9 +438,10 @@ class ValidateForm {
         target.value = countryCode + target.value.slice(countryCode.length);
       }
     });
+    
     phoneTag.addEventListener("keyup", (event) => {
       const { target } = event;
-      const { countryCode } = phoneRules[this.flag];
+      const { countryCode } = phoneRules[this.country];
       // Проверяем, если значение начинается с countryCode, то ничего не делаем
       if (!target.value.startsWith(countryCode)) {
         // Иначе добавляем countryCode и обновляем значение
@@ -783,6 +784,7 @@ class ValidateForm {
 }
 .custom__country-list-item__flag.ch {
   height: 15px;
+  width: 15px;
   background-position: -944px 0px;
 }
 .custom__country-list-item__flag.ci {

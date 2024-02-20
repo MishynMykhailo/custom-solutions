@@ -130,12 +130,12 @@ const phoneRules = {
     title: "Denmark (Danmark)",
     countryCode: "+61",
     minLength: 12,
-    maxLength: 12,
+    maxLength: 13,
     nameError: "Fill in your first and last name",
     emailError: "To email is invalid",
     errorForStartPhone: "The phone number after +61 cannot start with 0",
     errorForMinLength: "Phone number cannot be shorter than 12 characters",
-    errorForMaxLength: "Phone number cannot be longer than 12 characters",
+    errorForMaxLength: "Phone number cannot be longer than 13 characters",
   },
 };
 

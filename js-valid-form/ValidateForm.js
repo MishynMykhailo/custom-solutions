@@ -149,6 +149,34 @@ const phoneRules = {
     errorForMinLength: "The phone cannot be shorter than 12 characters",
     errorForMaxLength: "The phone cannot be more than 12 characters long",
   },
+  chfr: {
+    iso: "ch",
+    title: "Switzerland FR",
+    countryCode: "+41",
+    minLength: 12,
+    maxLength: 12,
+    nameError: "Remplir le prénom et le nom de famille",
+    emailError: "L'e-mail n'est pas valide",
+    errorForStartPhone: "Le téléphone après +41 ne peut pas commencer par 0",
+    errorForMinLength:
+      "Le numéro de téléphone ne peut être inférieur à 12 caractères",
+    errorForMaxLength:
+      "Le numéro de téléphone ne peut pas comporter plus de 12 caractères",
+  },
+  chde: {
+    iso: "ch",
+    title: "Switzerland DE",
+    countryCode: "+41",
+    minLength: 12,
+    maxLength: 12,
+    nameError: "Vor- und Nachname ausfüllen",
+    emailError: "Die E-Mail ist ungültig",
+    errorForStartPhone: "Telefon nach +41 kann nicht mit 0 beginnen",
+    errorForMinLength:
+      "Die Telefonnummer darf nicht weniger als 12 Zeichen lang sein.",
+    errorForMaxLength:
+      "Die Telefonnummer darf nicht länger als 12 Zeichen sein.",
+  },
 };
 
 class CountryDropdown {

@@ -283,6 +283,7 @@ class CountryDropdown {
   // Метод для создания интерфейса выпадающего списка стран
   createInterface() {
     const labelTag = document.createElement("label");
+    labelTag.classList.add("custom__country-label");
     const phoneTag = document.getElementById(this.phoneId);
     phoneTag.classList.add("custom__country-input");
     const container = this.createContainerForCountryList(
@@ -516,6 +517,9 @@ class ValidateForm {
     const style = document.createElement("style");
     style.textContent = `
     /* Custom country-list */
+    .custom__country-label{
+      width:100%
+    }
 .custom__country-input {
   width: 100%;
   box-sizing: border-box;

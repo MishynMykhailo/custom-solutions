@@ -311,7 +311,7 @@ class ValidateForm {
     phoneId,
     openDrop = true,
   }) {
-    this.country = country;
+    this.country = country.toLowerCase();
     this.formId = formId;
     this.firstNameId = firstNameId;
     this.lastNameId = lastNameId;
@@ -325,7 +325,7 @@ class ValidateForm {
     // Добавляем разметку для флагов
     this.countryDropdown = new CountryDropdown({
       phoneId,
-      defaultCountry: phoneRules[country].iso,
+      defaultCountry: phoneRules[this.country].iso,
     });
     // Если указан начальный country, то берем его
     this.flag = this.countryDropdown.defaultCountry
@@ -438,7 +438,7 @@ class ValidateForm {
         target.value = countryCode + target.value.slice(countryCode.length);
       }
     });
-    
+
     phoneTag.addEventListener("keyup", (event) => {
       const { target } = event;
       const { countryCode } = phoneRules[this.country];

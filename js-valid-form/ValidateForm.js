@@ -356,7 +356,7 @@ class ValidateForm {
     const { value } = document.getElementById(this.firstNameId);
     if (value.trim().length <= 0) {
       formEvent.preventDefault();
-      this.#handleErrorMessage(phoneRules[this.flag].nameError);
+      this.#handleErrorMessage(phoneRules[this.country].nameError);
       return;
     }
     return true;
@@ -367,7 +367,7 @@ class ValidateForm {
     const { value } = document.getElementById(this.lastNameId);
     if (value.trim().length <= 0) {
       formEvent.preventDefault();
-      this.#handleErrorMessage(phoneRules[this.flag].nameError);
+      this.#handleErrorMessage(phoneRules[this.country].nameError);
       return;
     }
     return true;
@@ -380,7 +380,7 @@ class ValidateForm {
       /^[^=]*[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!rule.test(value)) {
       formEvent.preventDefault();
-      this.#handleErrorMessage(phoneRules[this.flag].emailError);
+      this.#handleErrorMessage(phoneRules[this.country].emailError);
       return;
     }
     return true;
@@ -390,20 +390,20 @@ class ValidateForm {
   #validatePhone(formEvent) {
     const { value } = document.getElementById(this.phoneId);
     console.log(value);
-    const { countryCode, maxLength, minLength } = phoneRules[this.flag];
+    const { countryCode, maxLength, minLength } = phoneRules[this.country];
     if (value[countryCode.length] == 0) {
       formEvent.preventDefault();
-      this.#handleErrorMessage(phoneRules[this.flag].errorForStartPhone);
+      this.#handleErrorMessage(phoneRules[this.country].errorForStartPhone);
       return;
     }
     if (value.length < minLength) {
       formEvent.preventDefault();
-      this.#handleErrorMessage(phoneRules[this.flag].errorForMinLength);
+      this.#handleErrorMessage(phoneRules[this.country].errorForMinLength);
       return;
     }
     if (value.length > maxLength) {
       formEvent.preventDefault();
-      this.#handleErrorMessage(phoneRules[this.flag].errorForMaxLength);
+      this.#handleErrorMessage(phoneRules[this.country].errorForMaxLength);
       return;
     }
 

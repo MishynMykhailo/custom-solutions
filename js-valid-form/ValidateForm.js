@@ -347,10 +347,18 @@ class ValidateForm {
       this.#validateFirstName(formEvent) &&
         this.#validateLastName(formEvent) &&
         this.#validateEmail(formEvent) &&
-        this.#validatePhone(formEvent);
+        this.#validatePhone(formEvent) &&
+        this.#showLoaderGif(formEvent);
     });
   }
-
+  #showLoaderGif(formEvent) {
+    const loader = document.querySelector(".loadergf");
+    const submitBtn = formEvent.submitter;
+    const submitText = submitBtn.firstElementChild;
+    submitText.textContent = "";
+    loader.style.display = "block";
+    submitBtn.setAttribute("disabled", true);
+  }
   // Валидация имени
   #validateFirstName(formEvent) {
     const { value } = document.getElementById(this.firstNameId);
@@ -410,6 +418,8 @@ class ValidateForm {
     this.#handleErrorMessage("");
     return true;
   }
+  //
+
   // addEventListener для инпута с айди phone
   #handlerPhoneTag() {
     const phoneTag = document.getElementById(this.phoneId);

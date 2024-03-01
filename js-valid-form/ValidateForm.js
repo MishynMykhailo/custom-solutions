@@ -177,6 +177,32 @@ const phoneRules = {
     errorForMaxLength:
       "Die Telefonnummer darf nicht länger als 12 Zeichen sein.",
   },
+  gr: {
+    iso: "gr",
+    title: "Greece",
+    countryCode: "+30",
+    minLength: 13,
+    maxLength: 13,
+    nameError: "Συμπληρώστε το όνομα και το επώνυμο",
+    emailError: "Το email είναι άκυρο",
+    errorForStartPhone: "Το τηλέφωνο δεν μπορεί να ξεκινήσει με 0 μετά το +30",
+    errorForMinLength:
+      "Το τηλέφωνο δεν μπορεί να είναι μικρότερο από 13 χαρακτήρες",
+    errorForMaxLength:
+      "Το τηλέφωνο δεν μπορεί να έχει περισσότερους από 13 χαρακτήρες",
+  },
+  fi: {
+    iso: "fi",
+    title: "Finland",
+    countryCode: "+358",
+    minLength: 13,
+    maxLength: 13,
+    nameError: "Täytä etu- ja sukunimi",
+    emailError: "Sähköposti on virheellinen",
+    errorForStartPhone: "Puhelin ei voi alkaa 0:lla +358 jälkeen",
+    errorForMinLength: "Puhelinnumero ei saa olla lyhyempi kuin 13 merkkiä.",
+    errorForMaxLength: "Puhelimessa voi olla enintään 13 merkkiä",
+  },
 };
 
 class CountryDropdown {

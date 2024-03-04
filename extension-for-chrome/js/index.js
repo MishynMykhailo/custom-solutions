@@ -49,7 +49,33 @@ document.addEventListener("DOMContentLoaded", function () {
       duck.style.transform = `translate(${duckX}px, ${duckY}px)`;
       blurEffect.style.transform = `scale(1.3) translate(${blurEffectX}px, ${blurEffectY}px)`;
     });
+    // SUBID добавляем
+    const activeTab = tabs[0];
+    chrome.tabs.executeScript(
+      activeTab.id,
+      {
+        code: `
+ (function () {
+  const forms = document.querySelectorAll("form");
+    forms.forEach((form)=>{
+      const formsElements = form.querySelectorAll("input");
+        formsElements.forEach(input=>{
+            if(input.name == "subid"){
+        input.type = "text";
+        input.placeholder = "subid";
+        input.value = "";
+        input.required = "true";
+      }
+        })
+    })  
+
+})();
+                    `,
+      },
+      () => {}
+    );
   });
+
   userInfoText.addEventListener("change", (el) => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const activeTab = tabs[0];
@@ -68,12 +94,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       let filteredObject = {};
       for (elem in object) {
-        console.log(elem);
         switch (elem.toLowerCase()) {
           case "first_name":
           case "last_name":
           case "email":
           case "phone":
+          case "subid":
+          case "sub":
+          case "hitid":
+          case "click":
+          case "click_id":
+          case "aff_sub":
             filteredObject[elem.toLowerCase()] = object[elem].trim();
             break;
         }
@@ -95,14 +126,15 @@ document.addEventListener("DOMContentLoaded", function () {
   forms.forEach((form) => {
     const formsElements = form.querySelectorAll("input");
     formsElements.forEach((input) => {
+    
       if (input.name == "phone" || input.id == "phone") {
         input.click();
       }
     });
     formsElements.forEach((input) => {
-   
+      const resultSub = ["subid", "sub", "hitid", "click","click_id","aff_sub"];
       if(input.type !== "hidden"){
-        input.value = " "
+        input.value = ""
       }
       for (field in filteredObject) {
         input.click();
@@ -112,6 +144,10 @@ document.addEventListener("DOMContentLoaded", function () {
           input.id.includes(field)
         ) {
           input.value += filteredObject[field] || "";
+        }
+        if(resultSub.includes(input.name) && resultSub.includes(field)){
+          console.log(input.name,field)
+          input.value = filteredObject[field] || "";
         }
       }
     });

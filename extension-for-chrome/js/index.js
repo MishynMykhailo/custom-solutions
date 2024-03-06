@@ -54,23 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     chrome.tabs.executeScript(
       activeTab.id,
       {
-        code: `
- (function () {
-  const forms = document.querySelectorAll("form");
-    forms.forEach((form)=>{
-      const formsElements = form.querySelectorAll("input");
-        formsElements.forEach(input=>{
-            if(input.name == "subid"){
-        input.type = "text";
-        input.placeholder = "subid";
-        input.value = "";
-        input.required = "true";
-      }
-        })
-    })  
-
-})();
-                    `,
+        file: "./js/renderCheckbox.js",
       },
       () => {}
     );
@@ -96,7 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
       for (elem in object) {
         switch (elem.toLowerCase()) {
           case "first_name":
+            filteredObject["first_name"] = object[elem].trim();
+            break;
           case "last_name":
+            filteredObject["last_name"] = object[elem].trim();
+            break;
+          case "firstname":
+            filteredObject["first_name"] = object[elem].trim();
+            break;
+          case "lastname":
+            filteredObject["last_name"] = object[elem].trim();
+            break;
           case "email":
           case "phone":
           case "subid":
@@ -137,7 +131,10 @@ document.addEventListener("DOMContentLoaded", function () {
         input.value = ""
       }
       for (field in filteredObject) {
+        console.log(input.type !== "checkbox");
+        if(input.name !== "subid" && input.type !== "checkbox" && input.id !== "custom__resendLeads-label__checkbox"){
         input.click();
+        }
         if (
           input.name == field ||
           input.id == field  ||

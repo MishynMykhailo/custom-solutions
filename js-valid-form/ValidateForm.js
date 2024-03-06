@@ -203,6 +203,18 @@ const phoneRules = {
     errorForMinLength: "Puhelinnumero ei saa olla lyhyempi kuin 13 merkkiä.",
     errorForMaxLength: "Puhelimessa voi olla enintään 13 merkkiä",
   },
+  ro: {
+    iso: "ro",
+    title: "Romania",
+    countryCode: "+40",
+    minLength: 12,
+    maxLength: 12,
+    nameError: "Completați numele și prenumele",
+    emailError: "E-mailul nu este valid",
+    errorForStartPhone: "Numărul de telefon după +40 nu poate începe cu 0",
+    errorForMinLength: "Telefonul nu poate fi mai scurt de 12 caractere",
+    errorForMaxLength: "Telefonul nu poate avea mai mult de 12 caractere",
+  },
 };
 
 class CountryDropdown {

@@ -113,6 +113,33 @@ const phoneRules = {
     errorForMaxLength:
       "Le numéro de téléphone ne doit pas comporter plus de 14 caractères",
   },
+  befr: {
+    iso: "be",
+    title: "Belgium FR",
+    countryCode: "+32",
+    minLength: 12,
+    maxLength: 12,
+    nameError: "Remplir le prénom et le nom de famille",
+    emailError: "L'e-mail n'est pas valide",
+    errorForStartPhone: "Le téléphone après +32 ne peut pas commencer par 0",
+    errorForMinLength:
+      "Le numéro de téléphone ne peut être inférieur à 12 caractères",
+    errorForMaxLength:
+      "Le numéro de téléphone ne peut pas comporter plus de 12 caractères",
+  },
+  benl: {
+    iso: "be",
+    title: "Belgium NL",
+    countryCode: "+32",
+    minLength: 12,
+    maxLength: 12,
+    nameError: "Vul de voor- en achternaam in",
+    emailError: "De e-mail is ongeldig",
+    errorForStartPhone: "Telefoonnummer voor +32 mag niet beginnen met 0",
+    errorForMinLength:
+      "Het telefoonnummer mag niet minder dan 12 tekens lang zijn",
+    errorForMaxLength: "Het telefoonnummer mag niet langer zijn dan 12 tekens",
+  },
   dk: {
     iso: "dk",
     title: "Denmark (Danmark)",

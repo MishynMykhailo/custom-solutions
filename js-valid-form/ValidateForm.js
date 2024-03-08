@@ -86,6 +86,30 @@ const phoneRules = {
     errorForMinLength: "Telefonska številka ne sme biti krajša od 12 znakov",
     errorForMaxLength: "Telefonska številka ne sme biti daljša od 12 znakov",
   },
+  se: {
+    iso: "se",
+    title: "Sweden",
+    countryCode: "+46",
+    minLength: 12,
+    maxLength: 12,
+    nameError: "Fyll i ditt för- och efternamn",
+    emailError: "e-postadressen är felaktig",
+    errorForStartPhone: "Telefonen efter +385 kan inte börja med 0",
+    errorForMinLength: "Telefonnumret får inte vara mindre än 12 tecken",
+    errorForMaxLength: "Telefonnumret får inte innehålla mer än 12 tecken",
+  },
+  seen: {
+    iso: "se",
+    title: "Sweden",
+    countryCode: "+46",
+    minLength: 12,
+    maxLength: 12,
+    nameError: "Fill in first name and last name",
+    emailError: "The email is invalid",
+    errorForStartPhone: "Telephone after +46 cannot start with 0",
+    errorForMinLength: "The phone cannot be shorter than 12 characters",
+    errorForMaxLength: "The phone cannot be more than 12 characters long",
+  },
   brpt: {
     iso: "br",
     title: "Brazil (Brasil) PT",
@@ -772,6 +796,7 @@ class ValidateForm {
 .custom__country-list-item__flag.be {
   height: 15px;
   background-position: -440px 0px;
+  width: 18px;
 }
 .custom__country-list-item__flag.bf {
   height: 14px;

@@ -23,6 +23,32 @@ const phoneRules = {
     errorForMinLength: "Il telefono non può contenere meno di 12 caratteri",
     errorForMaxLength: "Il telefono non può essere lungo più di 13 caratteri",
   },
+  ie: {
+    iso: "ie",
+    title: "Ireland",
+    countryCode: "+353",
+    minLength: 13,
+    maxLength: 13,
+    nameError: "Fill in first name and last name",
+    emailError: "The email is invalid",
+    errorForStartPhone: "Telephone after +46 cannot start with 0",
+    errorForMinLength: "The phone cannot be shorter than 12 characters",
+    errorForMaxLength: "The phone cannot be more than 12 characters long",
+  },
+  ieen: {
+    iso: "ie",
+    title: "Ireland",
+    countryCode: "+353",
+    minLength: 13,
+    maxLength: 13,
+    nameError: "Líon isteach an chéad ainm agus an sloinne",
+    emailError: "Tá an ríomhphost neamhbhailí",
+    errorForStartPhone: "Ní thosaíonn an teileafón tar éis +46 le 0",
+    errorForMinLength:
+      "Ní féidir an fón póca bheith níos giorra ná 12 caractar",
+    errorForMaxLength:
+      "Ní féidir an fón póca a bheith níos faide ná 12 caractar",
+  },
   hr: {
     iso: "hr",
     title: "Horvatia",

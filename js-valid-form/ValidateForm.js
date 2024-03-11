@@ -31,9 +31,9 @@ const phoneRules = {
     maxLength: 13,
     nameError: "Fill in first name and last name",
     emailError: "The email is invalid",
-    errorForStartPhone: "Telephone after +46 cannot start with 0",
-    errorForMinLength: "The phone cannot be shorter than 12 characters",
-    errorForMaxLength: "The phone cannot be more than 12 characters long",
+    errorForStartPhone: "Telephone after +353 cannot start with 0",
+    errorForMinLength: "The phone cannot be shorter than 13 characters",
+    errorForMaxLength: "The phone cannot be more than 13 characters long",
   },
   ieen: {
     iso: "ie",
@@ -43,11 +43,11 @@ const phoneRules = {
     maxLength: 13,
     nameError: "Líon isteach an chéad ainm agus an sloinne",
     emailError: "Tá an ríomhphost neamhbhailí",
-    errorForStartPhone: "Ní thosaíonn an teileafón tar éis +46 le 0",
+    errorForStartPhone: "Ní thosaíonn an teileafón tar éis +353 le 0",
     errorForMinLength:
-      "Ní féidir an fón póca bheith níos giorra ná 12 caractar",
+      "Ní féidir an fón póca bheith níos giorra ná 13 caractar",
     errorForMaxLength:
-      "Ní féidir an fón póca a bheith níos faide ná 12 caractar",
+      "Ní féidir an fón póca a bheith níos faide ná 13 caractar",
   },
   hr: {
     iso: "hr",

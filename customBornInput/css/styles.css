@@ -1,0 +1,16 @@
+.custom__born-container {
+  display: flex;
+  gap: 5px;
+}
+.custom__born-days,
+.custom__born-month,
+.custom__born-years {
+  padding: 5px;
+  border: 1px solid gray
+}
+.custom__born-days {
+}
+.custom__born-month {
+}
+.custom__born-years {
+}

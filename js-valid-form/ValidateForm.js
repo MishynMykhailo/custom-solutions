@@ -23,7 +23,6 @@ const phoneRules = {
     errorForMinLength: "Il telefono non può contenere meno di 12 caratteri",
     errorForMaxLength: "Il telefono non può essere lungo più di 13 caratteri",
   },
-
   ie: {
     iso: "ie",
     title: "Ireland",
@@ -292,6 +291,18 @@ const phoneRules = {
     errorForStartPhone: "Numărul de telefon după +40 nu poate începe cu 0",
     errorForMinLength: "Telefonul nu poate fi mai scurt de 12 caractere",
     errorForMaxLength: "Telefonul nu poate avea mai mult de 12 caractere",
+  },
+  cz: {
+    iso: "cz",
+    title: "Czech Republic",
+    countryCode: "+420",
+    minLength: 13,
+    maxLength: 13,
+    nameError: "Vyplňte jméno a příjmení",
+    emailError: "E-mail je neplatný",
+    errorForStartPhone: "Telefon za +420 nesmí začínat číslicí 0",
+    errorForMinLength: "Telefon nesmí být kratší než 13 znaků",
+    errorForMaxLength: "Telefon nesmí být delší než 13 znaků",
   },
 };
 

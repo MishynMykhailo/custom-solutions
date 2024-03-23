@@ -494,6 +494,7 @@ class ValidateForm {
       this.#handleErrorMessage(phoneRules[this.country].nameError);
       return;
     }
+    this.#handleErrorMessage("");
     return true;
   }
 
@@ -505,6 +506,7 @@ class ValidateForm {
       this.#handleErrorMessage(phoneRules[this.country].nameError);
       return;
     }
+    this.#handleErrorMessage("");
     return true;
   }
 
@@ -518,6 +520,7 @@ class ValidateForm {
       this.#handleErrorMessage(phoneRules[this.country].emailError);
       return;
     }
+    this.#handleErrorMessage("");
     return true;
   }
 
